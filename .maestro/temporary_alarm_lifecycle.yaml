@@ -1,0 +1,37 @@
+# Quick-add a temporary alarm 1 minute out, let it ring, dismiss it,
+# and check it lands in "Recently ended" (not the main list) and can be restored.
+appId: com.alarmclockpro.debug
+---
+- launchApp:
+    clearState: true
+    permissions:
+      notifications: allow
+- tapOn:
+    id: quick_add
+- inputText: in 1m test dentist
+- assertVisible:
+    id: quick_add_preview
+    text: ".*Test dentist · ends after ringing.*"
+- tapOn:
+    id: quick_add_submit
+- assertVisible: "Temporary · removed after they ring"
+- assertVisible: "Test dentist"
+- assertVisible:
+    id: next_alarm
+- takeScreenshot: 01_after_quick_add
+# The alarm rings within ~90 s (rounded to the nearest minute).
+- extendedWaitUntil:
+    visible:
+      id: ring_title
+      text: "Test dentist"
+    timeout: 150000
+- takeScreenshot: 02_ringing
+- tapOn:
+    id: ring_primary
+- assertVisible: "Recently ended \\(1\\)"
+- assertNotVisible: "Temporary · removed after they ring"
+- assertVisible: "Rang today"
+- takeScreenshot: 03_recently_ended
+- tapOn: "Restore"
+- assertVisible: "Temporary · removed after they ring"
+- assertNotVisible: "Recently ended.*"

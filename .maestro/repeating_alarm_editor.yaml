@@ -1,0 +1,41 @@
+# Create a repeating alarm through the editor, then skip its next occurrence.
+appId: com.alarmclockpro.debug
+---
+- launchApp:
+    clearState: true
+    permissions:
+      notifications: allow
+- tapOn:
+    id: add_alarm
+- tapOn:
+    id: label_field
+- inputText: Work
+- hideKeyboard
+# Turning on Mon-Fri makes it repeating, which hides "Delete after it rings".
+- assertVisible:
+    id: temporary_switch
+- tapOn: { id: day_monday }
+- tapOn: { id: day_tuesday }
+- tapOn: { id: day_wednesday }
+- tapOn: { id: day_thursday }
+- tapOn: { id: day_friday }
+- assertNotVisible:
+    id: temporary_switch
+- takeScreenshot: 01_editor
+- scrollUntilVisible:
+    element:
+      id: save_alarm
+- tapOn:
+    id: save_alarm
+- assertVisible: "Alarms"
+- assertVisible: "Work"
+- assertVisible: "Weekdays.*"
+- takeScreenshot: 02_list
+- tapOn: "Work"
+- scrollUntilVisible:
+    element:
+      id: skip_switch
+- tapOn:
+    id: skip_switch
+- assertVisible: "Weekdays · skipping.*"
+- takeScreenshot: 03_skipped

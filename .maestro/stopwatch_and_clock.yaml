@@ -1,0 +1,24 @@
+appId: com.alarmclockpro.debug
+---
+- launchApp:
+    clearState: true
+    permissions:
+      notifications: allow
+- tapOn: "Stopwatch"
+- tapOn: { id: stopwatch_start }
+- swipe:   # just waits a moment
+    direction: UP
+    duration: 1500
+- tapOn: { id: stopwatch_secondary }   # lap
+- assertVisible: "Lap 1"
+- tapOn: { id: stopwatch_start }       # pause
+- takeScreenshot: 01_stopwatch
+- tapOn: { id: stopwatch_secondary }   # reset
+- assertNotVisible: "Lap 1"
+- tapOn: "Clock"
+- tapOn: "Add city"
+- inputText: Tokyo
+- tapOn: { id: "zone_Asia/Tokyo" }
+- assertVisible: "Tokyo"
+- assertVisible: ".*\\+\\d+.*h|.*−\\d+.*h"
+- takeScreenshot: 02_world_clock

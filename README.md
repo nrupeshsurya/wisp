@@ -1,44 +1,42 @@
-# Fossify Clock
-<img alt="Logo" src="graphics/icon.webp" width="120" />
+# Alarm Clock Pro
 
-<a href='https://play.google.com/store/apps/details?id=org.fossify.clock'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' height=80/></a> <a href="https://f-droid.org/packages/org.fossify.clock/"><img src="https://fdroid.gitlab.io/artwork/badge/get-it-on-en.svg" alt="Get it on F-Droid" height=80/></a> <a href="https://apt.izzysoft.de/fdroid/index/apk/org.fossify.clock"><img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroid.png" alt="Get it on IzzyOnDroid" height=80/></a>
+A lean Android clock app built around **labelled, temporary alarms**: one-off alarms ("dentist", "nap 20m")
+clean themselves up after they ring instead of piling up in your alarm list.
 
-Introducing Fossify Clock – the ultimate timekeeping companion designed to enhance your daily routines and promote better sleep habits. With a multitude of functions tailored to your needs, Fossify Clock seamlessly integrates into your life, offering unparalleled convenience and versatility.
+Forked from [Fossify Clock](https://github.com/FossifyOrg/Clock) (GPL-3.0). The alarm engine follows Fossify's
+approach (`setAlarmClock`, a foreground ringing service, reboot rescheduling); the UI is rewritten in
+Jetpack Compose + Material 3 without the Fossify Commons library. Release APK ≈ 1.5 MB (Fossify: ≈ 9 MB).
 
-**⌚ MULTIFUNCTIONAL TIMEKEEPING:**  
-Experience the power of versatile time management with Fossify Clock. From serving as a clock widget to functioning as an alarm clock and stopwatch, this app is your go-to tool for regulating your daily activities and improving your overall lifestyle.
+## Features
 
-**⏰ FEATURE-RICH ALARM:**  
-Wake up refreshed with Fossify Clock's comprehensive alarm features. Set multiple alarms with options like day selection, vibration toggle, custom labels and ringtone customization. Enjoy gradual volume increase and a customizable snooze button for a pleasant waking experience. With a user-friendly interface, setting up alarms has never been easier.
+- **Temporary alarms** — one-time alarms are temporary by default: after ringing they move to
+  *Recently ended* (restorable) and are cleared after 7 days.
+- **Quick add** — type `7:15 gym`, `nap 20m`, `in 45 min laundry`, `fri 9am dentist`, `weekdays 6:45 work`;
+  a live preview shows how it was understood before you add it.
+- Next-alarm card, skip next occurrence, snooze, swipe to delete with undo, per-alarm sound & vibration,
+  gradual volume, auto-silence, missed-alarm detection after the phone was off.
+- Timer (multiple, keypad entry), stopwatch with laps, world clock.
+- Works with assistants via the standard `SET_ALARM` / `SET_TIMER` intents.
 
-**⏱️ CONVENIENT STOPWATCH:**  
-Track your activities with precision using Fossify Clock's stopwatch function. Measure longer periods or individual laps effortlessly. You can also sort your laps in ascending or descending order.
+## Build
 
-**⏳ PRECISE TIMER FUNCTIONALITY:**  
-Stay on top of your tasks with Fossify Clock's versatile timer feature. Customize ringtone preferences, toggle vibrations, and pause countdowns to suit your needs. Whether you're timing cooking intervals, managing study sessions, or ensuring timely breaks, Fossify Clock has you covered with precision and ease.
+Requires JDK 17+ (Android Studio's bundled JBR works) and the Android SDK (compileSdk 37).
 
-**🌈 CLOCK WIDGET WITH CUSTOMIZABLE FEATURES:**  
-Transform your home screen with Fossify Clock's customizable clock widget. Adjust text color, background color, and transparency. Choose between analog or digital clock to suit your style and easily access essential time information at a glance.
+```sh
+./gradlew assembleDebug        # app/build/outputs/apk/debug/
+./gradlew assembleRelease      # minified, signed with the debug key for personal installs
+```
 
-**🎨 CUSTOMIZABLE INTERFACE AND THEMES:**  
-Enjoy a personalized experience with Fossify Clock's material design and dark theme options. Tailor the app to your preferences with customizable colors and themes, enhancing usability and reducing eye strain, especially in low-light environments.
+## Test
 
-**🔒 PRIVACY-FIRST APPROACH:**  
-Rest assured knowing your privacy is protected with Fossify Clock's offline operation. Experience maximum privacy, security, and stability without sacrificing functionality or convenience.
+```sh
+./gradlew testDebugUnitTest    # quick-add parser, next-trigger math, alarm lifecycle rules
+maestro test .maestro/         # end-to-end on a running emulator/device (alarms really ring)
+```
 
-**🌐 AD-FREE & OPEN-SOURCE:**  
-Say goodbye to intrusive ads and unnecessary permissions. Fossify Clock is ad-free, fully open-source, and grants you complete control over your timekeeping experience.
+The Maestro flows wait for real alarms (about 1–2 minutes each). Compose test tags are exposed as
+resource IDs (`testTagsAsResourceId`), so flows select elements by `id:`.
 
-Upgrade your time management skills, optimize your routines, and prioritize better sleep with Fossify Clock. Download now and take control of your time like never before.
+## License
 
-➡️ Explore more Fossify apps: https://www.fossify.org<br>
-➡️ Open-Source Code: https://www.github.com/FossifyOrg<br>
-➡️ Join the community on Reddit: https://www.reddit.com/r/Fossify<br>
-➡️ Connect on Telegram: https://t.me/Fossify
-
-<div align="center">
-<img alt="App image" src="fastlane/metadata/android/en-US/images/phoneScreenshots/1_en-US.png" width="30%">
-<img alt="App image" src="fastlane/metadata/android/en-US/images/phoneScreenshots/2_en-US.png" width="30%">
-<img alt="App image" src="fastlane/metadata/android/en-US/images/phoneScreenshots/3_en-US.png" width="30%">
-</div>
-
+GPL-3.0, see [LICENSE](LICENSE).

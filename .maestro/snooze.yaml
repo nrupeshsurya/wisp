@@ -1,0 +1,23 @@
+# Ring a temporary alarm, snooze it, and check it stays active (not ended) with the snooze shown.
+appId: com.alarmclockpro.debug
+---
+- launchApp:
+    clearState: true
+    permissions:
+      notifications: allow
+- tapOn:
+    id: quick_add
+- inputText: in 1m snooze me
+- tapOn:
+    id: quick_add_submit
+- extendedWaitUntil:
+    visible:
+      id: ring_title
+      text: "Snooze me"
+    timeout: 150000
+- tapOn:
+    id: ring_secondary
+- assertVisible: "Snooze me"
+- assertVisible: ".*snoozed until.*"
+- assertNotVisible: "Recently ended.*"
+- takeScreenshot: 01_snoozed

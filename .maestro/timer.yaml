@@ -1,0 +1,23 @@
+# Enter 5 seconds on the keypad, start, let it ring, stop it.
+appId: com.alarmclockpro.debug
+---
+- launchApp:
+    clearState: true
+    permissions:
+      notifications: allow
+- tapOn: "Timer"
+- tapOn: { id: key_5 }
+- assertVisible:
+    id: timer_entry
+    text: "00h 00m 05s"
+- tapOn: { id: timer_start }
+- assertVisible: { id: timer_remaining }
+- takeScreenshot: 01_running
+- extendedWaitUntil:
+    visible:
+      id: ring_title
+      text: "Time's up"
+    timeout: 30000
+- takeScreenshot: 02_ringing
+- tapOn: { id: ring_primary }
+- assertVisible: "0:05"
