@@ -1,3 +1,30 @@
-<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="108dp" android:height="108dp" android:viewportWidth="512" android:viewportHeight="512">
-    <path android:fillColor="#ffffff" android:pathData="M267 251.6V212q0-4.68-3.16-7.84Q260.67 201 256 201q-4.68 0-7.84 3.16T245 212v43.72q0 2.2 0.82 4.26 0.82 2.06 2.47 3.71l36.3 36.3q3.03 3.03 7.7 3.03 4.68 0 7.7-3.03 3.03-3.03 3.03-7.7 0-4.68-3.03-7.7zM256 366q-22.83 0-42.9-8.66-20.08-8.67-34.92-23.51-14.86-14.85-23.52-34.93Q146 278.83 146 256t8.66-42.9q8.66-20.08 23.51-34.92 14.85-14.85 34.92-23.51Q233.18 146 256 146q22.83 0 42.9 8.66 20.08 8.66 34.92 23.51 14.85 14.85 23.51 34.92Q366 233.18 366 256q0 22.83-8.66 42.9-8.66 20.08-23.51 34.92-14.85 14.85-34.92 23.51Q278.83 366 256 366zm0-110zm0 88q36.58 0 62.29-25.71T344 256q0-36.57-25.71-62.29Q292.58 168 256 168q-36.57 0-62.29 25.71Q168 219.43 168 256q0 36.58 25.71 62.29Q219.43 344 256 344z" android:strokeWidth="0.275"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wisp: an alarm clock whose trail of dots drifts away, like an alarm that cleans itself up. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="108" android:viewportHeight="108">
+    <!-- Scaled into the launcher safe zone (circle masks clip the outer wisp otherwise), visually centred. -->
+    <group android:pivotX="54" android:pivotY="54" android:scaleX="0.82" android:scaleY="0.82"
+        android:translateX="-3" android:translateY="1">
+    <!-- Face -->
+    <path android:pathData="M50,40 a17,17 0 1,1 0,34 a17,17 0 1,1 0,-34"
+        android:strokeColor="#FFFFFFFF" android:strokeWidth="5" />
+    <!-- Hands -->
+    <path android:pathData="M50,48 L50,57 L56,61"
+        android:strokeColor="#FFFFFFFF" android:strokeWidth="4.5"
+        android:strokeLineCap="round" android:strokeLineJoin="round" />
+    <!-- Bells: filled domes, slightly apart from the face -->
+    <path android:pathData="M30.5,44.5 A10,10 0 0,1 43.5,31.5 Z" android:fillColor="#FFFFFFFF" />
+    <path android:pathData="M56.5,31.5 A10,10 0 0,1 69.5,44.5 Z" android:fillColor="#FFFFFFFF" />
+    <!-- Legs -->
+    <path android:pathData="M39,72 L35.5,76.5 M61,72 L64.5,76.5"
+        android:strokeColor="#FFFFFFFF" android:strokeWidth="4.5" android:strokeLineCap="round" />
+    <!-- The wisp -->
+    <path android:pathData="M73,46 m-2.8,0 a2.8,2.8 0 1,0 5.6,0 a2.8,2.8 0 1,0 -5.6,0"
+        android:fillColor="#FFFFFFFF" android:fillAlpha="0.85" />
+    <path android:pathData="M78.5,39.5 m-2.1,0 a2.1,2.1 0 1,0 4.2,0 a2.1,2.1 0 1,0 -4.2,0"
+        android:fillColor="#FFFFFFFF" android:fillAlpha="0.55" />
+    <path android:pathData="M83,33.5 m-1.5,0 a1.5,1.5 0 1,0 3,0 a1.5,1.5 0 1,0 -3,0"
+        android:fillColor="#FFFFFFFF" android:fillAlpha="0.3" />
+    </group>
 </vector>

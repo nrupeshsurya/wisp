@@ -1,0 +1,1 @@
+First release: temporary alarms that clean up after they ring, quick add by typing, skip next, snooze, timer, stopwatch and world clock.

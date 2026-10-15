@@ -1,4 +1,4 @@
-appId: com.alarmclockpro.debug
+appId: io.github.nrupeshsurya.wisp.debug
 ---
 - launchApp:
     clearState: true

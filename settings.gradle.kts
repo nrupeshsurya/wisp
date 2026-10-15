@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "AlarmClockPro"
+rootProject.name = "Wisp"
 include(":app")

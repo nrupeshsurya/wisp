@@ -1,0 +1,1 @@
+Labelled alarms that clean up after they ring. Type “nap 20m” and you’re set.

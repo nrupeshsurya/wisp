@@ -1,5 +1,5 @@
 # Create a repeating alarm through the editor, then skip its next occurrence.
-appId: com.alarmclockpro.debug
+appId: io.github.nrupeshsurya.wisp.debug
 ---
 - launchApp:
     clearState: true

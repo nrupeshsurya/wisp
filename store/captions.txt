@@ -1,0 +1,5 @@
+01=One-off alarms clean up after they ring
+02=Just type it
+03=Labels, repeat days and sounds
+04=See why it's ringing
+05=Restore anything for 7 days

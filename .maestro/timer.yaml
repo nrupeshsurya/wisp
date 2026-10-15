@@ -1,5 +1,5 @@
 # Enter 5 seconds on the keypad, start, let it ring, stop it.
-appId: com.alarmclockpro.debug
+appId: io.github.nrupeshsurya.wisp.debug
 ---
 - launchApp:
     clearState: true

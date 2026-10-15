@@ -1,0 +1,48 @@
+# Captures raw Play Store screenshots with demo data (see store/PLAY_STORE.md):
+#   maestro test store/screenshots.yaml --test-output-dir <dir>
+appId: io.github.nrupeshsurya.wisp.debug
+---
+- launchApp:
+    clearState: true
+    permissions:
+      notifications: allow
+- runFlow:
+    commands:
+      - tapOn: { id: quick_add }
+      - inputText: weekdays 6:45 work
+      - tapOn: { id: quick_add_submit }
+      - tapOn: { id: quick_add }
+      - inputText: saturdays 9am football
+      - tapOn: { id: quick_add_submit }
+      - tapOn: { id: quick_add }
+      - inputText: fri 9am dentist
+      - tapOn: { id: quick_add_submit }
+      - tapOn: { id: quick_add }
+      - inputText: 7:30pm call mom
+      - tapOn: { id: quick_add_submit }
+      - tapOn: { id: quick_add }
+      - inputText: in 1m pizza out of the oven
+      - tapOn: { id: quick_add_submit }
+- extendedWaitUntil:
+    notVisible: "Alarm set for.*"
+    timeout: 15000
+- takeScreenshot: 01_list
+- tapOn: { id: quick_add }
+- inputText: tomorrow 8am pick up laundry
+- hideKeyboard
+- takeScreenshot: 02_quick_add
+- eraseText: 40
+- tapOn: "Dentist"
+- waitForAnimationToEnd
+- takeScreenshot: 03_editor
+- pressKey: back
+- extendedWaitUntil:
+    visible:
+      id: ring_title
+      text: "Pizza out of the oven"
+    timeout: 150000
+- takeScreenshot: 04_ringing
+- tapOn: { id: ring_primary }
+- scrollUntilVisible:
+    element: "Recently ended.*"
+- takeScreenshot: 05_recently_ended

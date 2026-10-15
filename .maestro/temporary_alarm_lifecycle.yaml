@@ -1,6 +1,6 @@
 # Quick-add a temporary alarm 1 minute out, let it ring, dismiss it,
 # and check it lands in "Recently ended" (not the main list) and can be restored.
-appId: com.alarmclockpro.debug
+appId: io.github.nrupeshsurya.wisp.debug
 ---
 - launchApp:
     clearState: true

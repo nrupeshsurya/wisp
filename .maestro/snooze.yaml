@@ -1,5 +1,5 @@
 # Ring a temporary alarm, snooze it, and check it stays active (not ended) with the snooze shown.
-appId: com.alarmclockpro.debug
+appId: io.github.nrupeshsurya.wisp.debug
 ---
 - launchApp:
     clearState: true

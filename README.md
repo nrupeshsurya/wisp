@@ -1,6 +1,6 @@
-# Alarm Clock Pro
+# Wisp
 
-A lean Android clock app built around **labelled, temporary alarms**: one-off alarms ("dentist", "nap 20m")
+**Wisp** is a lean Android clock app built around **labelled, temporary alarms**: one-off alarms ("dentist", "nap 20m")
 clean themselves up after they ring instead of piling up in your alarm list.
 
 Forked from [Fossify Clock](https://github.com/FossifyOrg/Clock) (GPL-3.0). The alarm engine follows Fossify's
@@ -36,6 +36,11 @@ maestro test .maestro/         # end-to-end on a running emulator/device (alarms
 
 The Maestro flows wait for real alarms (about 1–2 minutes each). Compose test tags are exposed as
 resource IDs (`testTagsAsResourceId`), so flows select elements by `id:`.
+
+## Play Store
+
+Listing, graphics, signing and Play Console answers: [store/PLAY_STORE.md](store/PLAY_STORE.md).
+Privacy policy: [PRIVACY.md](PRIVACY.md).
 
 ## License
 

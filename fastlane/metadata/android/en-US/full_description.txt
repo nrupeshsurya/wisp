@@ -1,0 +1,26 @@
+Most alarm lists fill up with one-off alarms you set once and never need again. Wisp fixes that: one-time alarms are temporary — after they ring, they quietly move to "Recently ended" (where you can restore them) and are cleared after 7 days. Your alarm list only shows what's still coming.
+
+<b>Set alarms by typing</b>
+Type what you mean and Wisp shows how it understood you before adding it:
+• "nap 20m" or "in 45 min laundry"
+• "7:15 gym tomorrow" or "fri 9am dentist"
+• "weekdays 6:45 work" or "every mon and wed 7am yoga"
+
+<b>Labels that matter</b>
+The label is the biggest thing on the ring screen, so you know why you set the alarm the moment it goes off. Recent labels are one tap away.
+
+<b>Everything a clock needs</b>
+• Next-alarm card: "Next alarm in 7 h 12 min"
+• Skip the next occurrence of a repeating alarm without turning it off
+• Snooze, gradual volume, auto-silence, per-alarm sound and vibration
+• Swipe to delete with undo
+• Timers with keypad entry, a stopwatch with laps, and a world clock
+• Works with assistants that set alarms and timers
+
+<b>Reliable</b>
+Wisp uses Android's alarm-clock API, so alarms ring on time even in battery-saving modes, wake the screen over the lock screen, and survive restarts. If the phone was off when an alarm was due, Wisp tells you instead of silently dropping it.
+
+<b>Light and private</b>
+About 1.5 MB, no ads, no accounts, no tracking. Wisp has no internet permission at all — your alarms never leave your phone.
+
+Open source (GPL-3.0), based on Fossify Clock.
