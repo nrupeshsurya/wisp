@@ -29,10 +29,9 @@ Captions live in `store/captions.txt`.
 
 ## Before you submit
 
-1. **GPL source availability.** Wisp is GPL-3.0 (forked from Fossify Clock). Distributing it on Play means
-   offering its source to users — make the GitHub repo public (or publish the source elsewhere) first.
-2. **Privacy policy URL.** Replace `<CONTACT_EMAIL>` in `PRIVACY.md` and host it publicly (public repo file,
-   GitHub Pages, or a public gist). A private-repo link won't work.
+1. ~~**GPL source availability.**~~ Done — source is public at https://github.com/nrupeshsurya/wisp.
+2. **Privacy policy.** Replace `<CONTACT_EMAIL>` in `PRIVACY.md`; then use
+   https://github.com/nrupeshsurya/wisp/blob/main/PRIVACY.md as the privacy policy URL.
 3. **Test on a real phone** (locked screen, reboot, battery saver), and decide the version
    (`VERSION_NAME`/`VERSION_CODE` in `gradle.properties`; currently 0.1.0 / 1).
 4. **Developer account:** play.google.com/console, one-time US$25 fee, identity verification.
